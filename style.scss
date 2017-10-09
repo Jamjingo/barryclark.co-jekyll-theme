@@ -18,6 +18,9 @@ html {
 
 body {
   background-image: url ("http://wallpapers.ae/wp-content/uploads/2015/10/Rainbows-equalizer-bars-wallpaper.jpg");
+  background-repeat: no-repeat:
+  background-attachment: fixed;
+  background-position: center;
   font: 18px/1.7 $helvetica;
   color: $gray;
 }
