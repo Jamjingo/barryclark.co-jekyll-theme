@@ -1,65 +1,78 @@
 ---
 ---
-  
+
 //
 // IMPORTS
 //
 
-@import "_reset";
-@import "_variables";
+@import "reset";
+@import "variables";
+// Syntax highlighting @import is at the bottom of this file
 
-/*/
-/* BASE RULES
-/*/
+/**************/
+/* BASE RULES */
+/**************/
 
 html {
   font-size: 100%;
 }
 
 body {
-  background-image: url ("http://wallpapers.ae/wp-content/uploads/2015/10/Rainbows-equalizer-bars-wallpaper.jpg");
-  background-repeat: no-repeat:
+  background-image: url("http://wallpapers.ae/wp-content/uploads/2015/10/Rainbows-equalizer-bars-wallpaper.jpg");
+  background-repeat: no-repeat;
   background-attachment: fixed;
-  background-position: center;
-  font: 18px/1.7 $helvetica;
+  background-position: center; 
+  font: 18px/1.4 $helvetica;
+  color: #ffffff;
 }
 
+.font_proof {
+	font-family: $cust_font;
+}
+	
 .container {
   margin: 0 auto;
-  max-width: 900px;
+  max-width: 850px;
   padding: 0 10px;
   width: 100%;
+  background:rgba(35, 50, 55,0.9);
+	border-radius: 25px;
+    padding: 20px; 
+	border-bottom: 1px solid white;
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: $helveticaNeue;
-  color: $darkerGray;
+  font-family: Verdana, Geneva, sans-serif;
+  color: #eac67a;
   font-weight: bold;
-  
-  line-height: 1.4;
+
+  line-height: 1.7;
   margin: 1em 0 15px;
   padding: 0;
+
+  @include mobile {
+    line-height: 1.4;
+  }
 }
-  
+
 h1 {
-  font-size: 28px;
+  font-size: 30px;
   a {
     color: inherit;
   }
 }
 
-h2 {  
+h2 {
   font-size: 24px;
-  padding-top: 20px;
 }
 
-h3 {  
+h3 {
   font-size: 20px;
 }
 
-h4 {  
-  font-size: 20px;
-  color: $gray;
+h4 {
+  font-size: 18px;
+  color: #98434b;
 }
 
 p {
@@ -67,19 +80,12 @@ p {
 }
 
 a {
-  color: $blue;
+  color: #984b43;
   text-decoration: none;
-  cursor: pointer;
-  // &:hover, &:active {
-  //   color: $orange;
-  // }
-}
-
-a.see-more {
-  text-transform: uppercase;
-  font-weight: bold;
-  font-size: 14px;
-  color: $gray;
+	cursor: pointer;
+  &:hover, &:active {
+    color: #eac67a;
+  }
 }
 
 ul, ol {
@@ -114,113 +120,60 @@ strong, b {
 img {
   max-width: 100%;
 }
-img.alignleft {
-  float: left;
-  width: 40%;
-  margin: 10px 10px 0 0;
-}
-img.alignright {
-  float: right;
-  width: 40%;
-  margin: 0 0 10px 10px;
-}
-/* emoji never get resized */
-img.emoji {
-  width: 20px !important;
-  margin: 0px !important;
-  float: none !important;
-  border: none !important;
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+	border-radius: 25px;
 }
 
-.inline-cta {
-  padding: 10px 15px;
-  background-color: #FDEBDA;
-  border: solid 1px $lightGray;
-  a {
-    text-decoration: underline;
-  }
+table, th, td {
+   border: 1px solid white;
+	background-color:#984b43;
+
+}
+
+td {
+   vertical-align: middle; 
+   padding: 10px;
+}	
+
+th {
+   color: white;
+   background: #233237;
+   height:50px;
+   vertical-align: middle;
+}
+
+div.vid {
+    width: 560px;
+    height: 340px;
+    margin: 0 auto;
+}
+
+iframe{
+	width: 100%;
+	
+}
+
+// Fixes images in popup boxes from Google Translate
+.gmnoprint img {
+  max-width: none;
 }
 
 .date {
-  color: $gray;
-}
-
-form {
-  label {
-    display: block;
-    font-size: 16px;
-    font-weight: 400;
-    margin: 10px 0 0;
-  }
-
-  input[type="text"], input[type="email"] {
-    font-family: $helvetica;
-    font-size: 18px;
-    border: 1px solid $lighterGray;
-    color: $darkGray;
-    display: block;
-    border-radius: 2px;
-    padding: 0.4em 0.5em;
-    margin: 0 0 0.5em;
-    -webkit-appearance: none;
-
-    -moz-box-shadow: inset 0 1px 3px rgba(0,0,0,.5);
-    -webkit-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.5);
-    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.5);
-
-    &:active {
-      border: 1px solid $gray;
-    }
-  }
-}
-
-.email-signup {
-  input[type="text"], input[type="email"] {
-    width: 240px;
-  }
-
-  .button {
-    //background: $blue;
-    margin: 0.25em 0;
-  }
-
-  p {
-    font-size: 12px;
-  }
-}
-
-.button {
-  display: inline-block;
-  margin-bottom: 0;
-  padding: 0.4em 0.7em 0.4em;
-  vertical-align: middle;
-  border-radius: 2px;
-  border: 0;
-  
-  background: $orange;
-  color: $white;
-
-  font-size: 18px;
-  font-family: $helvetica;
-  font-weight: 300;
-  text-align: center;
-  text-decoration: none;
-  text-shadow: none;
-  
-  background-image: none;
-  white-space: nowrap;
-  -webkit-appearance: none;
-  cursor: pointer;
+  font-style: italic;
+  color: white;
 }
 
 // Specify the color of the selection
 ::-moz-selection {
   color: $black;
-  background: $lighterGray;
+  background: $lightGray;
 }
 ::selection {
   color: $black;
-  background: $lighterGray;
+  background: $lightGray;
 }
 
 // Nicolas Gallagher's micro clearfix hack
@@ -235,23 +188,22 @@ form {
     clear: both;
 }
 
-/*/
-/* LAYOUT / SECTIONS
-/*/
+/*********************/
+/* LAYOUT / SECTIONS */
+/*********************/
 
 //
 // .masthead
 //
 
 .wrapper-masthead {
-  margin-bottom: 40px;
-  background-color: $blue;
-  border-bottom: 1px solid $lightGray;
+  margin-bottom: 25px;
 }
 
 .masthead {
-  padding: 35px 0;
-  
+  padding: 20px 0;
+  border-bottom: 1px solid white;
+
   @include mobile {
     text-align: center;
   }
@@ -259,10 +211,9 @@ form {
 
 .site-avatar {
   float: left;
-  width: 90px;
-  height: 90px;
-  margin-right: 30px;
-  cursor: pointer;
+  width: 70px;
+  height: 70px;
+  margin-right: 15px;
 
   @include mobile {
     float: none;
@@ -271,62 +222,64 @@ form {
   }
 
   img {
-    border-radius: 3px;
+    border-radius: 5px;
   }
 }
 
-.site-description {
+.site-info {
   float: left;
-  margin: 0;
-  margin-top: 7px;
-  max-width: 316px;
-  color: $transparentGray;
-  font-family: $merriweather;
-  font-weight: 300; 
-  font-size: 16px;
-  line-height: 1.7;
-  cursor: pointer;
 
-  b {
-    color: white;
-    font-weight: 400;
-  }
-  
   @include mobile {
     float: none;
     display: block;
-    margin: 20px auto;
+    margin: 0 auto;
+  }
+}
+
+.site-name {
+  margin: 0;
+  color: #eac67a;
+  cursor: pointer;
+  font-family: $helveticaNeue;
+  font-weight: 300;
+  font-size: 28px;
+  letter-spacing: 1px;
+}
+
+.site-description {
+  margin: -5px 0 0 0;
+  color: white;
+  font-size: 16px;
+
+  @include mobile {
+    margin: 3px 0;
   }
 }
 
 nav {
   float: right;
-  margin-top: 37px; // @TODO: Vertically middle align
-  margin-right: 120px; // @TODO: Rework header layout
-  font-family: $helvetica; 
-  font-size: 12px;
-  
+  margin-top: 23px; // @TODO: Vertically middle align
+  font-family: $helveticaNeue;
+  font-size: 18px;
+
   @include mobile {
-    margin-right: 0;
     float: none;
+    margin-top: 9px;
     display: block;
+    font-size: 16px;
   }
 
   a {
-    padding: 10px;
-    color: $transparentGray;
+    margin-left: 20px;
+    color: white;
     text-align: right;
-    font-weight: 400;
-    text-transform: uppercase;
-  }
+    font-weight: 300;
+    letter-spacing: 1px;
 
-  .button {
-    margin-right: 13px;
-    margin-bottom: 3px;
-    padding: 0.5em 0.8em 0.5em;
-    text-transform: uppercase;
-    font-size: 13px;
-    color: $lighterGray;
+    @include mobile {
+      margin: 0 10px;
+      color: $blue;
+    }
   }
 }
 
@@ -334,52 +287,9 @@ nav {
 // .main
 //
 
-.post, .page {
-  max-width: 640px;
-  margin: 0 auto;
-  @media screen and (max-width: 730px) {
-    padding: 0 10px;
-  }
-}
-
-.portfolio {
-
-  h1, .date {
-    max-width: 640px;
-    margin-left: auto;
-    margin-right: auto;
-    @media screen and (max-width: 730px) {
-      padding: 0 10px;
-    }
-  }
-
-  section {
-    max-width: 1250px;
-    margin: 0 auto;
-    padding: 0 10px;
-
-    img {
-      width: 60%;
-      margin-right: 20px;
-      float: left;
-      border: solid 1px $lightGray;
-
-      @media screen and (max-width: 860px) {
-        width: 100%;
-        float: none;
-        margin-right: 0px;
-      }
-    }
-
-    p {
-
-    }
-  }
-}
-
 .posts > .post {
-  padding-bottom: 1em;
-  border-bottom: 1px solid $lighterGray;
+  padding-bottom: 2em;
+  border-bottom: 1px solid white;
 }
 
 .posts > .post:last-child {
@@ -389,83 +299,38 @@ nav {
 
 .post {
   blockquote {
-    margin: 1.5em 0.5em;
-    border-left: 2px solid $gray;
+    margin: 1.8em .8em;
+    border-left: 2px solid white;
     padding: 0.1em 1em;
-    color: $gray;
-    font-size: 20px;
+    color: white;
+    font-size: 22px;
     font-style: italic;
+  }
+
+  .comments {
+    margin-top: 10px;
+  }
+
+  .read-more {
+    text-transform: uppercase;
+    font-size: 15px;
   }
 }
 
-.wrapper-footer {
-  margin-top: 40px;
-  border-top: 1px solid $lightGray;
-  border-bottom: 1px solid $lightGray;
-  background-color: $lighterGray;
-}
+//.wrapper-footer {
+//  margin-top: 50px;
+//  border-top: 1px solid #ddd;
+//  border-bottom: 1px solid #ddd;
+//  background-color: $lightGray;
+//}
 
 footer {
   padding: 20px 0;
   text-align: center;
+	border-bottom: 1px solid white;
 }
-
-.cta {
-  border: 1px solid #ddd;
-  margin: 40px auto;
-  padding-left: 30px;
-  max-width: 730px;
-  background-color: $lighterGray;
-
-  -moz-box-shadow: 0 1px 2px rgba(0,0,0,.3);
-  -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
-
-  @media screen and (max-width: 730px) {
-    max-width: 450px;
-  }
-
-  .description {
-    float: left;
-    max-width: 390px;
-    padding-right: 30px;
-
-    h2 {
-      margin-bottom: 0px;
-    }
-
-    p, li {
-      color: $gray;
-    }
-  }
-
-  form {
-    float: left;
-    border-left: 1px solid $lightGray;
-    padding: 30px;
-    //background-color: $lightGray;
-
-    @include mobile {
-      border-left: none;
-      padding: 10px;
-    }
-  }
-}
-
-.newsletter-page {
-  form {
-    margin-top: 25px;
-    padding: 10px 30px;
-    max-width: 300px;
-
-    background-color: $lighterGray;
-    border: 1px solid #ddd;
-    -moz-box-shadow: 0 1px 2px rgba(0,0,0,.3);
-    -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
-    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);    
-  }
-}   
 
 // Settled on moving the import of syntax highlighting to the bottom of the CSS
 // ... Otherwise it really bloats up the top of the CSS file and makes it difficult to find the start
-@import "_highlights";
+@import "highlights";
+@import "svg-icons";
